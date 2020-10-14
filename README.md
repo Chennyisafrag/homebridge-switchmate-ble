@@ -4,6 +4,8 @@ Homebridge plugin for Switchmate light switches and power outlets, allowing them
 
 **Note:** v1.3.0 adds the new v3 signature and depends on NodeJS v14. I like to test the plugin for a few weeks but I have rushed it out to allow you to use it. I will be testing and improving the plugin for a few weeks. My setup uses BlueZ v5.55 on an RPi 3 but if you face a problem, don't hesitate to raise an issue; bare in mind that I might not be able to address it for weeks due to... hmm... you know... life!
 
+To update to NodeJS v14 use `sudo hb-service update-node 14.13.1`.
+
 ## Installation
 After fulfilling the prerequisites, install this plugin using `npm i -g homebridge-switchmate-ble`.
 
@@ -27,7 +29,7 @@ If you feel brave, want to help test unreleased updates, or are asked to update 
 This plugin lets you group switches to manage three-way switches. It also optionally exposes your devices via HTTP, with and without authentication.
 
 #### Finding your Switchmate
-Run `switchmate-ble find` to find the Switchmate devices around you. This would list the `id` and version of the devices found.
+Navigate to the plugin directory and run `node switchmate-ble find` to find the Switchmate devices around you. This would list the `id` and version of the devices found.
 * `v1` devices need to be paired before they can be operated. Use `switchmate-ble pair ID`, replacing "ID" with the `id` of your version 1 switch, to get the `authCode`.
 * `v3` devices don't use pairing!!!
 
